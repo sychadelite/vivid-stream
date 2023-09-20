@@ -1,0 +1,26 @@
+﻿@using Newtonsoft.Json
+@using Vivid.ViewModels
+
+@model AccountViewModel
+
+@{
+    ViewBag.Title = "Account";
+}
+
+<h2>Account</h2>
+
+<div class="container">
+    <ul>
+        <li>Id: @Model.Id</li>
+        <li>Username: @Model.Username</li>
+        <li>Name: @Model.Name</li>
+        <li>Email: @Model.Email</li>
+        <li>Bio: @(Model.Bio ?? "...")</li>
+    </ul>
+    <code class="text-black">
+        <pre>
+            @Html.Raw(JsonConvert.SerializeObject(Model.AllUsers, Formatting.Indented))
+        </pre>
+    </code>
+</div>
+

@@ -1,0 +1,18 @@
+﻿@using Newtonsoft.Json
+@using Vivid.ViewModels
+
+@model MovieDetailsViewModel
+
+@{
+    ViewBag.Title = "List Movies";
+}
+
+<div class="container">
+    <h2>Detail of Movie @Model.Movie.Id</h2>
+    <code class="text-black">
+        <pre>
+            @Html.Raw(JsonConvert.SerializeObject((MovieDetailsViewModel)ViewData["Details"], Formatting.Indented))
+        </pre>
+    </code>
+</div>
+

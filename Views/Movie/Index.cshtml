@@ -1,0 +1,24 @@
+﻿@using Vivid.ViewModels
+
+@model MoviesViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <h2 class="m-auto text-center">Movies</h2>
+    <div class="d-flex flex-wrap justify-content-center my-5 gap-2">
+        @foreach (var item in Model.Movies)
+        {
+            <div class="card" style="width: 18rem; height: fit-content;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Description</p>
+                    @Html.ActionLink("View", "Detail", "Movie", new { id = item.Id }, new { @class = "btn btn-outline-secondary" })
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
